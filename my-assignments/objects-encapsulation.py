@@ -1,6 +1,6 @@
 # Classes are a blueprint
 class CoffeeOrder:
-  def __init__(self, name, coffee_type, has_milk):
+  def __init__(self, name, coffee_type, has_milk: bool = False):
     self.name = name
     self.type = coffee_type
     self.has_milk = has_milk
