@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------
-# CHALLENGE 1
+# SAMPLE
+print('\nSAMPLE')
 
 # Created the Dog class
 class Dog:
@@ -59,7 +60,8 @@ print(ralph.__dict__)
 
 
 # -----------------------------------------------------------------------
-# CHALLENGE 2
+# CHALLENGE 1
+print('\nCHALLENGE 1')
 
 # TODO: We need to define a Dog class. All dogs will have the following 
 # attributes. Define these on the class Dog below. 
@@ -100,3 +102,59 @@ for dog in dogs:
 # TODO: Use the __dict__ attribute to print each dog and check it's attributes and values 
 # use a loop to print __dict__ for each dog in your list. 
 [print(dog.__dict__) for dog in dogs]
+
+
+# -----------------------------------------------------------------------
+# CHALLENGE 2
+print('\nCHALLENGE 2')
+
+# TODO: Each object should have the following attributes:
+# name - name of the city you picked
+# country - the country the city is located in
+# temperature - the city's temperature in F. 
+# latitude - city's latitude coordinate 
+# longitude - city's longitude coordinate 
+
+# Location class
+class Location:
+    def __init__(self, name: str, country: str, 
+                 temperature: float, latitude: float, longitude: float):
+        self.name = name
+        self.country = country
+        self.temperature = temperature
+        self.latitude = latitude
+        self.longitude = longitude
+
+# TODO: Instantiate three locations. Instaniate each location with the correct values for 
+# name, country, temperature, latitude, longitude. For the last three look up the correct 
+# values! Use the current teperature and the actual latitude and longitude. 
+
+chicago = Location(name='Chicago', country='United States of America',
+                   temperature=65, latitude=41.881832, longitude=-87.623177)
+
+osaka = Location(name='Osaka', country='Japan',
+                   temperature=57, latitude=34.672314, longitude=135.484802)
+
+porto = Location(name='Porto', country='Portugal',
+                   temperature=67, latitude=41.150223, longitude=-8.629932)
+
+# TODO: Using the object variable names, create a list of Location objects called bucketlist.
+bucket_list = [chicago, osaka, porto]
+
+# TODO: Using the loop print the name of the city of each location in bucketlist. 
+[print(city.name) for city in bucket_list]
+
+# TODO: Loop over your locations and print only locations above the equator. 
+# Latitude represents how far above or below the equator a location is. Positive numbers 
+# are above the equator negative numbers are below. 
+for city in bucket_list:
+    if city.latitude > 0:
+        print(f"{city.name} is above the equator")
+
+# TODO: Using the loop, loop through the objects to find which location has the warmest weather
+max_attr = max(bucket_list, key=lambda x: x.temperature)
+print(f"The city with the highest temperature is: {max_attr.name}")
+
+
+# -----------------------------------------------------------------------
+# CHALLENGE 3
