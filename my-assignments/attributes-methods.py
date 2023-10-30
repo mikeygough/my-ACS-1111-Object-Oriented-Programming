@@ -157,4 +157,72 @@ print(f"The city with the highest temperature is: {max_attr.name}")
 
 
 # -----------------------------------------------------------------------
-# CHALLENGE 3
+# CHALLENGE 2.5
+print('\nCHALLENGE 2.5')
+
+# Students Class
+class Student:
+    # class attributes are shared by all instances
+    school = "Make School"
+    location = "San Francisco"
+    major = "Computer Science"
+
+
+# TODO: Instantiate 2 object of type Student
+jhene = Student()
+kehlani = Student()
+
+# TODO: Access class attributes using dot notation. Run this code and check the output
+
+print(f"Jhene studies {jhene.major} at {jhene.school} in {jhene.location}.")
+print(f"Kehlani studies {kehlani.major} at {kehlani.school} in {kehlani.location}.")
+
+# TODO: Print the  __dict__ attribute to for each object to see a dictionary of all the attributes defined for the object itself.
+
+print(jhene.__dict__)
+print(kehlani.__dict__)
+
+# TODO: Answer the question: Why is it blank? 
+# I think because school, location and major are all class attributes instead of instance attributes.
+
+# TODO: Remove the comment on the line below: 
+print(Student.__dict__)
+
+# TODO: Answer the questions: 
+# What attributes do I see in the Student class object? 
+# Is Student an instance of Student or is it something else?
+
+# I see the 'school', 'location' and 'major' attributes.
+# Student is not an instance of Student, it is the class.
+
+# Imagine that Make School moves to San Rafael!
+# We can update the class variable for all instances by:
+
+# TODO: Uncomment the line below
+Student.location = "San Rafael"
+
+# TODO: Uncomment the lines below and run your code.
+# Here you are printing the location for each student again.
+
+print(f"Jhene studies in {jhene.location}.")
+print(f"Kehlani studies in {kehlani.location}.")
+
+# TODO: Kehlani transfered , update her school to UCLA.
+# Uncomment these lines:
+
+kehlani.school = "UCLA"
+print(kehlani.school)
+
+# Do you think that the name of the school will change for Jhene too? Test it.
+# TODO: Predict what you think will happen. Is jhene going to UCLA or are they
+# still in San Rafael?
+
+print(jhene.school) 
+
+# What happened?
+# Looks like kehlani.school = 'UCLA' overode the class attribute and updated it to UCLA.
+# this effectively changed the instance attribute
+
+# Print the __dict__ for kehlani
+print(kehlani.__dict__)
+# Now kehlani has instance attributes!
